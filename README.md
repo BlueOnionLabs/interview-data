@@ -20,7 +20,7 @@ Each processor has different schemas and conventions for representing similar in
 
 ## Product Requirements
 
-Build a data pipeline that processes these various data sources and creates a transformed dataset suitable for accounting analysis. The final output should enable the generation of monthly journal entries (similar to the current example but focusing on the data processing aspects).
+Build a data pipeline that processes these various data sources and creates a transformed dataset suitable for accounting analysis. The final output should enable the generation of monthly journal entries (see `example_journal_entries.csv` for an example of the expected output format).
 
 ### Features
 - Data Ingestion
