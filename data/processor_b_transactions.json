@@ -1,0 +1,186 @@
+{
+  "transactions": [
+    {
+      "id": "TX-B-001",
+      "timestamp": "2024-03-15T09:25:00Z",
+      "customer": {
+        "id": "C-789",
+        "region": "US-CA",
+        "address": {
+          "street": "123 Tech Blvd",
+          "city": "San Francisco",
+          "state": "CA",
+          "country": "US"
+        }
+      },
+      "payment": {
+        "type": "ach",
+        "amount_cents": 12500,
+        "currency": "USD",
+        "status": "settled"
+      },
+      "items": [
+        {
+          "product_code": "PROD-C303",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "TX-B-002",
+      "timestamp": "2024-03-15T10:30:00Z",
+      "customer": {
+        "id": "C-456",
+        "region": "US-NY"
+      },
+      "payment": {
+        "type": "wire",
+        "amount_cents": 299999,
+        "currency": "USD",
+        "status": "pending"
+      },
+      "items": [
+        {
+          "product_code": "PROD-A103",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "TX-B-003",
+      "timestamp": "2024-03-15T11:45:00Z",
+      "customer": {
+        "id": "C-123",
+        "region": "DE"
+      },
+      "payment": {
+        "type": "sepa",
+        "amount_cents": 25000,
+        "currency": "EUR",
+        "status": "completed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-B201",
+          "qty": 1
+        },
+        {
+          "product_code": "PROD-C301",
+          "qty": 2
+        }
+      ]
+    },
+    {
+      "id": "TX-B-004",
+      "timestamp": "2024-03-16T09:00:00Z",
+      "customer": {
+        "id": "C-234",
+        "region": "US-WA"
+      },
+      "payment": {
+        "type": "credit_card",
+        "amount_cents": 99999,
+        "currency": "USD",
+        "status": "failed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-B202",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "TX-B-005",
+      "timestamp": "2024-03-16T10:15:00Z",
+      "customer": {
+        "id": "C-567",
+        "region": "CA-ON"
+      },
+      "payment": {
+        "type": "credit_card",
+        "amount_cents": 150000,
+        "currency": "CAD",
+        "status": "completed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-D401",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "TX-B-006",
+      "timestamp": "2024-03-16T11:30:00Z",
+      "customer": {
+        "id": "C-890",
+        "region": "US-TX",
+        "address": {
+          "street": "890 Dallas Rd",
+          "city": "Dallas",
+          "state": "TX",
+          "country": "US"
+        }
+      },
+      "payment": {
+        "type": "ach",
+        "amount_cents": -50000,
+        "currency": "USD",
+        "status": "completed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-C302",
+          "qty": 1
+        }
+      ],
+      "refund_reason": "customer_dissatisfaction"
+    },
+    {
+      "id": "TX-B-007",
+      "timestamp": null,
+      "customer": {
+        "id": "C-111",
+        "region": "US-CA"
+      },
+      "payment": {
+        "type": "credit_card",
+        "amount_cents": 199999,
+        "currency": "USD",
+        "status": "completed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-A101",
+          "qty": null
+        }
+      ]
+    },
+    {
+      "id": "TX-B-008",
+      "timestamp": "2024-03-16T13:00:00Z",
+      "customer": {
+        "id": "C-222",
+        "region": "FR"
+      },
+      "payment": {
+        "type": "sepa",
+        "amount_cents": 45000,
+        "currency": "EUR",
+        "status": "completed"
+      },
+      "items": [
+        {
+          "product_code": "PROD-C301",
+          "qty": 1
+        },
+        {
+          "product_code": "PROD-C302",
+          "qty": 1
+        }
+      ],
+      "bundle_discount_pct": 10
+    }
+  ]
+}
