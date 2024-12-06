@@ -14,77 +14,71 @@ The repository contains sample data files in the `/data` directory:
 - `processor_a_transactions.csv`: Main payment processor transactions
 - `processor_b_transactions.json`: Secondary payment processor transactions
 - `tax_rates.csv`: Reference table for tax rates by region
-- `product_catalog.csv`: Product information including categories and pricing
 
 Each processor has different schemas and conventions for representing similar information.
 
 ## Product Requirements
 
-Build a data pipeline that processes these various data sources and creates a transformed dataset suitable for accounting analysis. The final output should enable the generation of monthly journal entries (see `example_journal_entries.csv` for an example of the expected output format).
+We need to generate monthly accounting reports that track money flowing in and out. Each month's report should:
+1. Sum up all transactions for that month
+2. Show the money customers owe us (orders, shipping, and taxes)
+3. Show the money we received from customers
+4. Follow this format:
 
-### Features
-- Data Ingestion
-  - Create ingestion processes for both CSV and JSON data sources
-  - Implement basic data quality checks
-  - Handle common data issues (duplicates, missing values, etc.)
+### Monthly Report Format
+Example for a month with $20,000 in orders:
+```csv
+Account,Debit,Credit,Description
+Accounts Receivable,20000.00,,Cash expected for orders
+Revenue,,20000.00,Revenue for orders
 
-- Data Transformation
-  - Normalize transaction data from different sources into a consistent format
-  - Calculate derived fields (e.g., total sales, tax amounts)
-  - Create dimension tables for products, regions, and time periods
-  - Implement proper handling of historical data changes
+Accounts Receivable,1500.00,,Cash expected for shipping
+Shipping Revenue,,1500.00,Revenue for shipping
 
-- Data Modeling
-  - Design an efficient schema that supports:
-    - Fast query performance for common accounting queries
-    - Easy maintenance and updates
-    - Clear audit trail of transformations
-    - Flexible reporting capabilities
+Accounts Receivable,750.00,,Cash expected for taxes
+Sales Tax Payable,,750.00,Cash to be paid for sales tax
 
-### Required Calculations
-- Transaction amount normalization (handling different currency formats)
-- Tax calculations based on regional rates
-- Monthly aggregations for:
-  - Gross sales by product category
-  - Net revenue after returns
-  - Tax liability by jurisdiction
-  - Payment reconciliation
+Cash,22250.00,,Cash received
+Accounts Receivable,,22250.00,Clears out what customers owed
+```
 
-## Technical Requirements
+### How to Calculate Each Amount
+1. Order amount: Transaction amount (minus bundle discount if exists)
+2. Shipping: From transaction data (not affected by bundle discount)
+3. Tax: Order amount × tax rate (shipping is not taxed)
+4. Convert all amounts to USD using transaction date's exchange rate
 
-### Infrastructure
-- Use DuckDB or SQLite for local development
-- Optionally: If you have access, you may use Snowflake/BigQuery/etc.
-- Implement data quality tests
-- Include proper documentation of data lineage
+See example_journal_entries.csv for more examples.
 
-### Data Pipeline
-- Build modular transformation logic using DBT (or similar tool)
-- Include proper testing and documentation
-- Implement error handling and logging
-- Create incremental processing capability
+### Technical Requirements
 
-### Documentation
-- Provide a README with setup instructions
-- Include data dictionary for final models
-- Document any assumptions made about the data
-- Explain your choices in data modeling and transformation logic
+1. **Data Ingestion**
+   - Process processor_a_transactions.csv and processor_b_transactions.json
+   - Validate required fields: transaction_id, date, amount, currency, status
+   - Check regions exist in tax_rates.csv
 
-### Bonus Points
-- Implementation of data quality monitoring
-- Performance optimization techniques
-- CI/CD configuration
-- Data visualization examples
+2. **Data Model**
+   - transactions (normalized data from both processors)
+   - tax_rates (from tax_rates.csv)
+   - monthly_journal_entries (output)
+
+3. **Infrastructure**
+   - Use a database you feel comfortable with for local development (DuckDB or SQLite are suggested as options)
+   - Implement error handling and logging
+   - Optional: If you have access, you may use Snowflake/BigQuery/etc.
+   - Optional but suggested: Use a tool to perform modular transformations (DBT is one such option)
+   - Bonus: Create incremental processing capability
+   - Bonus: Implementation of data quality monitoring
+   - Bonus: CI/CD configuration
+
+4. **Documentation**
+   - Provide a README with setup instructions
+   - Document any assumptions made about the data
 
 ## Submission
 
-Please provide a link to a repository containing your code. Include:
-- Source code for all transformations
-- DDL for required tables
-- Documentation of your solution
-- Any scripts needed to run the pipeline
+Please provide a link to a repository containing your code
 
-We recognize this assignment is comprehensive and appreciate your time. If you choose not to implement certain aspects, please explain your prioritization decisions.
+We recognize this assignment is comprehensive and appreciate your time. It's totally OK to opt out of certain implementation details. If you choose not to implement certain aspects of the exercise, just explain your prioritization decisions.
 
 Good luck!
-

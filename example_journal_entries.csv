@@ -1,35 +1,20 @@
-1/31/24 Journal Entry:,,,
-Account,Debit,Credit,Description
-Accounts Receivable,10000.00,,Cash expected for orders
-Revenue,,10000.00,Revenue for orders
-Accounts Receivable,1000.00,,Cash expected for shipping on orders
-Shipping Revenue,,1000.00,Revenue for shipping
-Accounts Receivable,500.00,,Cash expected for taxes
-Sales Tax Payable,,500.00,Cash to be paid for sales tax
-Cash,11500.00,,Cash received
-Accounts Receivable,,11500.00,Removal of expectation of cash
-,23000.00,23000.00,
+month,account,debit,credit,description
+2024-01,Accounts Receivable,20000.00,,Cash expected for orders
+2024-01,Revenue,,20000.00,Revenue for orders
+2024-01,Accounts Receivable,1500.00,,Cash expected for shipping
+2024-01,Shipping Revenue,,1500.00,Revenue for shipping
+2024-01,Accounts Receivable,750.00,,Cash expected for taxes
+2024-01,Sales Tax Payable,,750.00,Cash to be paid for sales tax
+2024-01,Cash,22250.00,,Cash received
+2024-01,Accounts Receivable,,22250.00,Clears out what customers owed
+2024-01,TOTAL,44500.00,44500.00,Monthly totals must balance
 
-2/29/24 Journal Entry:,,,
-Account,Debit,Credit,Description
-Accounts Receivable,20000.00,,Cash expected for orders
-Revenue,,20000.00,Revenue for orders
-Shipping Accounts Receivable,1500.00,,Cash expected for shipping on orders
-Shipping Revenue,,1500.00,Revenue for shipping
-Tax Receivable,750.00,,Cash expected for taxes
-Sales Tax Payable,,750.00,Cash to be paid for sales tax
-Cash,22250.00,,Cash received
-Accounts Receivable,,22250.00,Removal of expectation of cash
-,44500.00,44500.00,
-
-3/31/24 Journal Entry:,,,
-Account,Debit,Credit,Description
-Accounts Receivable,4000.00,,Cash expected for orders
-Revenue,,4000.00,Revenue for orders
-Shipping Accounts Receivable,200.00,,Cash expected for shipping on orders
-Shipping Revenue,,200.00,Revenue for shipping
-Tax Receivable,100.00,,Cash expected for taxes
-Sales Tax Payable,,100.00,Cash to be paid for sales tax
-Cash,4300.00,,Cash received
-Accounts Receivable,,4300.00,Removal of expectation of cash
-,8600.00,8600.00,
+2024-02,Accounts Receivable,15000.00,,Cash expected for orders
+2024-02,Revenue,,15000.00,Revenue for orders
+2024-02,Accounts Receivable,1200.00,,Cash expected for shipping
+2024-02,Shipping Revenue,,1200.00,Revenue for shipping
+2024-02,Accounts Receivable,600.00,,Cash expected for taxes
+2024-02,Sales Tax Payable,,600.00,Cash to be paid for sales tax
+2024-02,Cash,16800.00,,Cash received
+2024-02,Accounts Receivable,,16800.00,Clears out what customers owed
+2024-02,TOTAL,33600.00,33600.00,Monthly totals must balance
