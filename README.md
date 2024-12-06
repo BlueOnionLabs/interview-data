@@ -14,6 +14,7 @@ The repository contains sample data files in the `/data` directory:
 - `processor_a_transactions.csv`: Main payment processor transactions
 - `processor_b_transactions.json`: Secondary payment processor transactions
 - `tax_rates.csv`: Reference table for tax rates by region
+- `exchange_rates.csv`: Daily currency conversion rates to USD
 
 Each processor has different schemas and conventions for representing similar information.
 
@@ -46,7 +47,7 @@ Accounts Receivable,,22250.00,Clears out what customers owed
 1. Order amount: Transaction amount (minus bundle discount if exists)
 2. Shipping: From transaction data (not affected by bundle discount)
 3. Tax: Order amount × tax rate (shipping is not taxed)
-4. Convert all amounts to USD using transaction date's exchange rate
+4. Convert all amounts to USD using exchange_rates.csv for the transaction date
 
 See example_journal_entries.csv for more examples.
 
