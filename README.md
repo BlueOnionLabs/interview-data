@@ -6,7 +6,7 @@ This assignment is designed to give you an opportunity to demonstrate your data 
 
 ## Background
 
-In our hypothetical scenario, we have a client who needs to process and analyze their financial transaction data from multiple sources to generate accurate accounting reports. The client receives daily transaction files from various payment processors and needs to consolidate this data into a reliable analytical database that powers their accounting system.
+In our hypothetical scenario, we have a client who needs to process and analyze their financial transaction data from multiple sources to generate accurate accounting reports. The client receives daily transaction files from various payment processors and needs to consolidate this data into a reliable analytical database that powers their accounting system. Your solution should assume that data volumes and update frequencies could scale significantly in the future in a production environment.
 
 ## Data Sources
 
@@ -64,7 +64,7 @@ See example_journal_entries.csv for more examples.
    - monthly_journal_entries (output)
 
 3. **Infrastructure**
-   - Use a database you feel comfortable with for local development (DuckDB or SQLite are suggested as options)
+   - Use a database you feel comfortable with for local development
    - Implement error handling and logging
    - Optional: If you have access, you may use Snowflake/BigQuery/etc.
    - Optional but suggested: Use a tool to perform modular transformations (DBT is one such option)
